@@ -1,45 +1,60 @@
 /* Flexbox Part 1 */
 
 #flex-section1 ul {
-
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /*removing the bullets */
+  display: flex;/*buttons should be in a row */
+  justify-content: space-evenly;/*buttons should have an equal amount of space inbetween each other and in the beginning and end */
 }
 
 /* end Flexbox Part 1 */
 
 
 /* Flexbox Part 2 */
-
+/* three equal width columns*/
 #flex-section2 ul {
-
+  margin: 0;
+  padding: 0;
+  list-style-type: none; 
+  display: flex;
+  justify-content: center; 
 }
 
 #flex-section2 li {
-
+  flex: 1;
 }
 
 #flex-section2 .item1 {
-
+  order: 0; /*used to reorder*/
 }
 
 #flex-section2 .item2 {
-
+  order: 2; /*used to reorder*/
 }
 
 #flex-section2 .item3 {
-
+  order: 1; /*used to reorder*/
 }
 
 /* end Flexbox Part 2 */
 
 
 /* Flexbox Part 3 */
-
+/*center the card item both horizontally and vertically in the box */
+/*turn list of words into tags below the image*/
 #flex-section3 .box {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #flex-section3 .tags ul {
-
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* end Flexbox Part 3 */
@@ -48,7 +63,11 @@
 /* Grid Part 1 */
 
 #grid-section1 .grid {
-
+  display: grid;
+  grid-template-columns: auto auto auto auto ; /* 4 columns */
+  grid-gap: 20px; /*20 pixel gap between the columns and rows*/
+  grid-row: auto;
+  grid-auto-rows: 100px; /*rows should be auto-generate and be 100px tall*/
 }
 
 /* end Grid Part 1 */
@@ -57,11 +76,18 @@
 /* Grid Part 2 */
 
 #grid-section2 .gridboxblue {
-
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  z-index: 1; /*stacking order*/
 }
 
 #grid-section2 .gridboxred {
-
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
 }
 
 /* end Grid Part 2 */
@@ -70,23 +96,30 @@
 /* Grid Part 3 */
 
 #grid-section3 .grid {
-
+  display: grid;
+  grid-template-columns: 2fr 1fr; /*the first column should be twice the width of the second column*/
+  grid-template-rows: 100px 300px 100px; /*The first and last row should be 100px tall and the middle row should be 300px tall*/
+  grid-gap: 10px; /*10px gap between all rows and columns*/
+  grid-template-areas: 
+  "first first"
+  "third second"
+  "fourth fourth";
 }
 
 #grid-section3 .box1 {
-
+  grid-area: first;
 }
 
 #grid-section3 .box2 {
-
+  grid-area: second;
 }
 
 #grid-section3 .box3 {
-
+  grid-area: third;
 }
 
 #grid-section3 .box4 {
-
+  grid-area: fourth;
 }
 
 /* end Grid Part 3 */
@@ -100,13 +133,16 @@
 	color: #000;
 	padding: 20px;
 	text-decoration: none;
-
-
+  /*When the user stops hovering the button transitions back to normal with a 3 section duration.*/
+  transition-duration: 3s;
 }
 
 #transition-section .box a:hover {
 	background-color: #cc0000;
 	color: #fff;
+  /*When the user hovers the transitions will happen with a .5 second duration.*/
+  transition-duration: .5s;
+
 
 
 }
